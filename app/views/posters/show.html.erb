@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @poster.tipo %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @poster.description %>
+</p>
+
+<%= link_to 'Edit', edit_poster_path(@poster) %> |
+<%= link_to 'Back', posters_path %>

@@ -1,0 +1,72 @@
+<div class="container">
+
+  <div class="user-infos">
+    <strong>Meu Nome:</strong> <%= @user.name %> |
+    <strong>Meu Apto:</strong> <%= @user.apto %> -
+    <%= link_to "Editar", edit_registration_path(resource_name) %> |
+    <%= link_to 'Voltar', gatos_path %>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Meus Gatos</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Raça</th>
+                <th>Cor</th>
+                <th>Sexo</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @user_gatos.each do |gato| %>
+                <tr>
+                  <td><%= gato.name %></td>
+                  <td><%= gato.race %></td>
+                  <td><%= gato.color %></td>
+                  <td><%= gato.gender %></td>
+                  <td><%= link_to 'Ver mais', gato %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Meus Anúncios</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @user_posters.each do |poster| %>
+                <tr>
+                  <td><%= poster.tipo %></td>
+                  <td><%= poster.description %></td>
+                  <td><%= link_to 'Ver mais', poster %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

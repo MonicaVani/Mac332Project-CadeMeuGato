@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row index-gatos">
+
+    <% if @gatos.empty? %>
+
+    <h3> Não temos nenhum gato ): </h3>
+    <%= link_to 'Cadastre seu gatinho', new_gato_path%>
+
+    <% elsif %>
+      <% @gatos.each do |gato| %>
+        <div class="col-sm-4 col-md-2">
+          <div class="thumbnail">
+            <%= image_tag gato.avatar.url(:thumb) %>
+            <div class="caption">
+              <p>Nome: <strong><%= gato.name %></strong></p>
+              <p>Sexo: <%= gato.gender %></p>
+              <p>Raça: <%= gato.race %></p>
+              <p>Cor: <%= gato.color %></p>
+              <p>Idade: <%= gato.age %></p>
+              <p><%= link_to 'Ver mais', gato, class:'btn btn-primary', role:'button'%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

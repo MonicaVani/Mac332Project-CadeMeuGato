@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-md-offset-2 show-gatos">
+      <p>
+        <%= image_tag @gato.avatar.url(:medium) %>
+      </p>
+    </div>
+
+    <div class="col-md-3 col-md-offset-2 show-gatos">
+      <p>
+        <strong>Quem cuida:</strong>
+        <%= @gato.user.name %>
+      </p>
+
+      <p>
+        <strong>Nome:</strong>
+        <%= @gato.name %>
+      </p>
+
+      <p>
+        <strong>Sexo:</strong>
+        <%= @gato.gender %>
+      </p>
+
+      <p>
+        <strong>Data Nascimento:</strong>
+        <%= @gato.age %>
+      </p>
+
+      <p>
+        <strong>Raça:</strong>
+        <%= @gato.race %>
+      </p>
+
+      <p>
+        <strong>Cor:</strong>
+        <%= @gato.color %>
+      </p>
+
+      <p>
+        <strong>Descrição:</strong>
+        <%= @gato.description %>
+      </p>
+
+      <p>
+        <strong>Status:</strong>
+        <%= @gato.status %>
+      </p>
+
+      <% if current_user%>
+        <%= link_to 'Editar', edit_gato_path(@gato) %> |
+        <%= link_to 'Remover', @gato, method: :delete, data: { confirm: 'Tem certeza?' } %> |
+      <% end %>
+      <%= link_to 'Voltar', gatos_path %>
+    </div>
+  </div>
+</div>

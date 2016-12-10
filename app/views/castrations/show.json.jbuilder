@@ -1,0 +1,1 @@
+json.partial! "castrations/castration", castration: @castration

@@ -1,0 +1,29 @@
+<h1>Listing Castrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Place</th>
+      <th>Price</th>
+      <th>When</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @castrations.each do |castration| %>
+      <tr>
+        <td><%= castration.place %></td>
+        <td><%= castration.price %></td>
+        <td><%= castration.when %></td>
+        <td><%= link_to 'Show', castration %></td>
+        <td><%= link_to 'Edit', edit_castration_path(castration) %></td>
+        <td><%= link_to 'Destroy', castration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Castration', new_castration_path %>

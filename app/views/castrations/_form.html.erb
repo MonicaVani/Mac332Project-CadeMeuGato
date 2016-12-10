@@ -1,0 +1,29 @@
+<%= form_for(@castration) do |f| %>
+  <% if @castration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@castration.errors.count, "error") %> prohibited this castration from being saved:</h2>
+
+      <ul>
+      <% @castration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :when %><br>
+    <%= f.date_select :when %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
