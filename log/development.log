@@ -22142,3 +22142,477 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-12-10 13:50:37 -0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-10 14:56:22 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GatosController#index as HTML
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (23.0ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (74.5ms)
+Completed 200 OK in 1090ms (Views: 996.3ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/gatos/new" for 127.0.0.1 at 2016-12-10 15:12:32 -0200
+Processing by GatosController#new as HTML
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gatos/_form.html.erb (155.2ms)
+  Rendered gatos/new.html.erb within layouts/application (158.3ms)
+  Rendered share/_navbar.html.erb (1.3ms)
+Completed 200 OK in 447ms (Views: 372.7ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/gatos" for 127.0.0.1 at 2016-12-10 16:58:05 -0200
+Processing by GatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GfDGXH3h6JkJzl1qgmgWMxGqLdbA0oj02W0H+WPCEoVFaNYsxV39K5L182IYDi1xw7tZUCfg44HPvNf19wZ92Q==", "gato"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f5870b880d8 @tempfile=#<Tempfile:/tmp/RackMultipart20161210-20026-1p508a7.jpeg>, @original_filename="floquinho.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gato[avatar]\"; filename=\"floquinho.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Floquinho", "gender"=>"Masculino", "race"=>"Bobtail Japones", "color"=>"Branca com mancha preta peluda", "age(1i)"=>"2016", "age(2i)"=>"11", "age(3i)"=>"1", "status"=>"Castrado", "description"=>"Dado para Priscila em 11/11/2016"}, "commit"=>"Create Gato"}
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/219fe7b167708cf4df85d3095e72a6f320161210-20026-c8zko7.jpeg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/219fe7b167708cf4df85d3095e72a6f320161210-20026-ttx7zb.jpeg[0]' 2>/dev/null
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 3.8ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/gatos_controller.rb:28:in `create'
+
+
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.4ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (103.9ms)
+
+
+Started POST "/gatos" for 127.0.0.1 at 2016-12-10 16:58:35 -0200
+Processing by GatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GfDGXH3h6JkJzl1qgmgWMxGqLdbA0oj02W0H+WPCEoVFaNYsxV39K5L182IYDi1xw7tZUCfg44HPvNf19wZ92Q==", "gato"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f58726bf310 @tempfile=#<Tempfile:/tmp/RackMultipart20161210-20026-12bgk4w.jpeg>, @original_filename="floquinho.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gato[avatar]\"; filename=\"floquinho.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Floquinho", "gender"=>"Masculino", "race"=>"Bobtail Japones", "color"=>"Branca com mancha preta peluda", "age(1i)"=>"2016", "age(2i)"=>"11", "age(3i)"=>"1", "status"=>"Castrado", "description"=>"Dado para Priscila em 11/11/2016"}, "commit"=>"Create Gato"}
+  [1m[35mUser Load (8.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/219fe7b167708cf4df85d3095e72a6f320161210-20026-ui7boh.jpeg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/219fe7b167708cf4df85d3095e72a6f320161210-20026-1lm96ch.jpeg[0]' 2>/dev/null
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 8.3ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/gatos_controller.rb:28:in `create'
+
+
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.4ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.1ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 12:41:50 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (20.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GatosController#index as HTML
+  [1m[35m (18.1ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (109.1ms)
+  [1m[36mUser Load (22.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (244.4ms)
+Completed 200 OK in 2507ms (Views: 2218.6ms | ActiveRecord: 207.6ms)
+
+
+Started GET "/gatos/new" for 127.0.0.1 at 2016-12-11 12:42:22 -0200
+Processing by GatosController#new as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gatos/_form.html.erb (376.7ms)
+  Rendered gatos/new.html.erb within layouts/application (381.1ms)
+  Rendered share/_navbar.html.erb (1.5ms)
+Completed 200 OK in 689ms (Views: 623.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/gatos" for 127.0.0.1 at 2016-12-11 12:43:19 -0200
+Processing by GatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZQxhhge5znF9qdIdon3SRXmg7sRLMYxoUhjJPrTcMVI5lHH2vwXbw+aSfBU4G+kHq7GaQqwD5x1EyRkyIBheDg==", "gato"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f2359127298 @tempfile=#<Tempfile:/tmp/RackMultipart20161211-2673-1skgrc0.jpeg>, @original_filename="floquinho.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gato[avatar]\"; filename=\"floquinho.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Floquinho", "gender"=>"Masculino", "race"=>"Bobtail Japones", "color"=>"Branca com mancha preta peluda", "age(1i)"=>"2016", "age(2i)"=>"11", "age(3i)"=>"1", "status"=>"Castrado", "description"=>"Doado pela Priscila em 11/11/2016"}, "commit"=>"Create Gato"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/219fe7b167708cf4df85d3095e72a6f320161211-2673-ovzbxw.jpeg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/219fe7b167708cf4df85d3095e72a6f320161211-2673-15f83hv.jpeg[0]' 2>/dev/null
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 1.3ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/gatos_controller.rb:28:in `create'
+
+
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.8ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.4ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.0ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (116.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 16:39:12 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (18.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GatosController#index as HTML
+  [1m[35m (17.5ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (97.6ms)
+  [1m[36mUser Load (22.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (204.8ms)
+Completed 200 OK in 1669ms (Views: 1407.6ms | ActiveRecord: 189.8ms)
+
+
+Started GET "/gatos/new" for 127.0.0.1 at 2016-12-11 16:39:26 -0200
+Processing by GatosController#new as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gatos/_form.html.erb (354.1ms)
+  Rendered gatos/new.html.erb within layouts/application (359.7ms)
+  Rendered share/_navbar.html.erb (1.4ms)
+Completed 200 OK in 681ms (Views: 528.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-12-11 16:39:30 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGato Load (1.3ms)[0m  [1mSELECT "gatos".* FROM "gatos" WHERE "gatos"."user_id" = $1  ORDER BY "gatos"."name" ASC[0m  [["user_id", 1]]
+  [1m[35mPoster Load (38.0ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."user_id" = $1  ORDER BY "posters"."tipo" ASC  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (57.4ms)
+  Rendered share/_navbar.html.erb (2.7ms)
+Completed 200 OK in 638ms (Views: 276.6ms | ActiveRecord: 44.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'castrations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (22.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'gatos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (8.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (8.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (235.1ms)[0m  [1mDROP DATABASE IF EXISTS "gatito_test"[0m
+  [1m[35m (732.4ms)[0m  CREATE DATABASE "gatito_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (113.9ms)[0m  CREATE TABLE "castrations" ("id" serial primary key, "place" character varying, "price" float, "when" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (128.2ms)[0m  [1mCREATE TABLE "gatos" ("id" serial primary key, "name" character varying, "gender" character varying, "race" character varying, "color" character varying, "description" text, "status" character varying, "age" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer, "castration_id" integer, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp) [0m
+  [1m[35m (67.1ms)[0m  CREATE  INDEX  "index_gatos_on_castration_id" ON "gatos" USING btree ("castration_id")
+  [1m[36m (56.8ms)[0m  [1mCREATE  INDEX  "index_gatos_on_user_id" ON "gatos" USING btree ("user_id")[0m
+  [1m[35m (140.0ms)[0m  CREATE TABLE "posters" ("id" serial primary key, "tipo" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" integer) 
+  [1m[36m (58.2ms)[0m  [1mCREATE  INDEX  "index_posters_on_user_id" ON "posters" USING btree ("user_id")[0m
+  [1m[35m (137.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying, "apto" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet) 
+  [1m[36m (68.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (46.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (9.6ms)[0m  [1mALTER TABLE "gatos" ADD CONSTRAINT "fk_rails_6ede2d2d45"
+FOREIGN KEY ("castration_id")
+  REFERENCES "castrations" ("id")
+[0m
+  [1m[35m (9.6ms)[0m  ALTER TABLE "gatos" ADD CONSTRAINT "fk_rails_e3f170a12d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (9.9ms)[0m  [1mALTER TABLE "posters" ADD CONSTRAINT "fk_rails_f1941d801b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (58.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (48.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (1.8ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161210034537')[0m
+  [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161209223717')
+  [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161209231218')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161210011234')
+  [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161209232951')[0m
+  [1m[35m (10.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161209221744')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161209224058')[0m
+  [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161209223456')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161209230853')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161209231015')
+  [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161209232020')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 17:36:58 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GatosController#index as HTML
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (77.4ms)
+Completed 200 OK in 1519ms (Views: 1451.6ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-12-11 17:37:01 -0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-12-11 17:37:12 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (8.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGato Load (1.0ms)[0m  SELECT "gatos".* FROM "gatos" WHERE "gatos"."user_id" = $1  ORDER BY "gatos"."name" ASC  [["user_id", 1]]
+  [1m[36mPoster Load (1.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."user_id" = $1  ORDER BY "posters"."tipo" ASC[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (18.2ms)
+  Rendered share/_navbar.html.erb (1.5ms)
+Completed 200 OK in 293ms (Views: 183.4ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 18:21:32 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GatosController#index as HTML
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (23.7ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (77.5ms)
+Completed 200 OK in 995ms (Views: 882.4ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 20:10:52 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (32.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GatosController#index as HTML
+  [1m[35m (37.6ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (162.9ms)
+  Rendered share/_navbar.html.erb (55.0ms)
+Completed 200 OK in 6263ms (Views: 5234.8ms | ActiveRecord: 124.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-12-11 20:11:31 -0200
+Processing by Users::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (1290.6ms)
+Completed 500 Internal Server Error in 1681ms (ActiveRecord: 236.5ms)
+
+ActionView::Template::Error (undefined local variable or method `new_password_reset_path' for #<#<Class:0x007ff2bb4c61d8>:0x007ff2bb4bf9a0>
+Did you mean?  new_password_path):
+    12:     <%= f.input :apto, label: "Apartamento"%>
+    13:     <%= f.input :email, required: true, autofocus: true %>
+    14:     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    15: 	<%= link_to "forgotten password?", new_password_reset_path %></p>
+    16:     <%= f.input :password_confirmation, required: true %>
+    17:   </div>
+    18: 
+  app/views/users/registrations/new.html.erb:15:in `block in _app_views_users_registrations_new_html_erb__691750388449836103_70340250540960'
+  app/views/users/registrations/new.html.erb:7:in `_app_views_users_registrations_new_html_erb__691750388449836103_70340250540960'
+
+
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.5ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.6ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/monica/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (122.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-12-11 20:13:39 -0200
+Processing by Users::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (59.9ms)
+  Rendered share/_navbar.html.erb (1.8ms)
+Completed 200 OK in 2991ms (Views: 2987.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-11 20:15:46 -0200
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AIxRpuDNtBUL5jYUeaAgvMa7x79ECcFXFx4sV3bUPqUHhZ8jGmIyU2aX6x9CgWfyIkcEZm1btPo4/7OuSDU+1A==", "user"=>{"name"=>"Eriksson", "apto"=>"", "email"=>"erikssonsambe0@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (143.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (489.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'erikssonsambe0@gmail.com' LIMIT 1
+  [1m[36mSQL (383.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Eriksson"], ["email", "erikssonsambe0@gmail.com"], ["encrypted_password", "$2a$11$wzXuQ4HeMoS9s1nUfoniZ.90FBdXixvV1p3lNWMh0v.p2wRHRacOO"], ["created_at", "2016-12-11 22:15:49.823933"], ["updated_at", "2016-12-11 22:15:49.823933"]]
+  [1m[35m (140.6ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (114.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-12-11 22:15:50.509003"], ["current_sign_in_at", "2016-12-11 22:15:50.509003"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-12-11 22:15:50.511749"], ["id", 2]]
+  [1m[36m (28.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4134ms (ActiveRecord: 1301.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 20:15:50 -0200
+Processing by GatosController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (62.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered share/_navbar.html.erb (31.2ms)
+Completed 200 OK in 726ms (Views: 680.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-12-11 21:03:31 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (20.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (22.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mGato Load (19.9ms)[0m  SELECT "gatos".* FROM "gatos" WHERE "gatos"."user_id" = $1  ORDER BY "gatos"."name" ASC  [["user_id", 2]]
+  [1m[36mPoster Load (20.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."user_id" = $1  ORDER BY "posters"."tipo" ASC[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (81.9ms)
+  Rendered share/_navbar.html.erb (3.8ms)
+Completed 200 OK in 2601ms (Views: 2056.1ms | ActiveRecord: 225.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-12-11 21:11:16 -0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gnK/VO0rJAvJuIlcqcjdp3Kzzl7FM6BxbBnnATzU7qeFe3HRF4SiTaTJVFeS6Zrplk8Nh+xh1dxD+Hj4AjXu1g=="}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 21:11:16 -0200
+Processing by GatosController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "gatos"[0m
+  Rendered gatos/index.html.erb within layouts/application (7.5ms)
+  Rendered share/_navbar.html.erb (14.6ms)
+Completed 200 OK in 279ms (Views: 274.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-11 21:11:21 -0200
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (4.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (273.9ms)
+  Rendered share/_navbar.html.erb (3.2ms)
+Completed 200 OK in 776ms (Views: 629.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-12-11 21:11:25 -0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eab1eBgKG4JPWejdPWyCgxWYnxpJqOHJ8HXXG9gZwLy3wG6c2tqZNw8n57i5D0EYf/WhHt3TlhpAprkfuMGKcg==", "user"=>{"email"=>"monica.afro.cv@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "monica.afro.cv@gmail.com"]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["current_sign_in_at", "2016-12-11 23:11:25.693901"], ["sign_in_count", 2], ["updated_at", "2016-12-11 23:11:25.697515"], ["id", 1]]
+  [1m[36m (18.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 637ms (ActiveRecord: 22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 21:11:25 -0200
+Processing by GatosController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (14.7ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (8.3ms)
+Completed 200 OK in 281ms (Views: 273.0ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-12-11 21:11:34 -0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N0l1o0UYG+NT02/H2ulRuoVuKnZhrOEMYOSgRJ7x+5ScGYHMSzc9VaASGnxJ3/qQ6AT/IhtTmwUmlX7U/o/Wkw=="}
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 21:11:34 -0200
+Processing by GatosController#index as HTML
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "gatos"[0m
+  Rendered gatos/index.html.erb within layouts/application (3.8ms)
+  Rendered share/_navbar.html.erb (1.9ms)
+Completed 200 OK in 160ms (Views: 156.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-12-11 21:12:19 -0200
+Processing by Users::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (65.9ms)
+  Rendered share/_navbar.html.erb (1.8ms)
+Completed 200 OK in 314ms (Views: 309.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-11 21:13:01 -0200
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (44.0ms)
+  Rendered share/_navbar.html.erb (1.8ms)
+Completed 200 OK in 198ms (Views: 193.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-12-11 21:13:24 -0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1NuFv2p1g4ia+/sTYDYpW/rAKRrs8PGItbdhy9OXtSV0T0RDAQ5fMzqRzq92kcRLLtXe5BRkNqaLlg0AHjsqrw==", "user"=>{"email"=>"monica.afro.cv@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "monica.afro.cv@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2016-12-11 23:11:25.693901"], ["current_sign_in_at", "2016-12-11 23:13:24.532441"], ["sign_in_count", 3], ["updated_at", "2016-12-11 23:13:24.535687"], ["id", 1]]
+  [1m[36m (21.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 288ms (ActiveRecord: 24.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-11 21:13:24 -0200
+Processing by GatosController#index as HTML
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "gatos"
+  Rendered gatos/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered share/_navbar.html.erb (5.7ms)
+Completed 200 OK in 152ms (Views: 147.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/gatos/new" for 127.0.0.1 at 2016-12-11 21:13:38 -0200
+Processing by GatosController#new as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gatos/_form.html.erb (72.3ms)
+  Rendered gatos/new.html.erb within layouts/application (77.2ms)
+  Rendered share/_navbar.html.erb (1.4ms)
+Completed 200 OK in 289ms (Views: 229.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-12-11 21:14:41 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGato Load (1.1ms)[0m  [1mSELECT "gatos".* FROM "gatos" WHERE "gatos"."user_id" = $1  ORDER BY "gatos"."name" ASC[0m  [["user_id", 1]]
+  [1m[35mPoster Load (1.0ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."user_id" = $1  ORDER BY "posters"."tipo" ASC  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (7.8ms)
+  Rendered share/_navbar.html.erb (1.0ms)
+Completed 200 OK in 194ms (Views: 172.2ms | ActiveRecord: 12.4ms)
