@@ -12,6 +12,7 @@
     <%= f.input :apto, label: "Apartamento"%>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+	<%= link_to "forgotten password?", new_password_reset_path %></p>
     <%= f.input :password_confirmation, required: true %>
   </div>
 
