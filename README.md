@@ -6,7 +6,7 @@ Projeto desenvolvido para a disciplina de Engenharia de Software para Gerenciar 
 Authors: Monica Vani Vieira Lopes da Silva
 
 Configuration
-	Add Clone from Git
+	Add Clone from Git: https://github.com/MonicaVani/Mac332Project-CadeMeuGato.git
 
 Installing Rails :
 
