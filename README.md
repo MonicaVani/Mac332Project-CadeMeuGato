@@ -10,7 +10,7 @@ Configuration
 
 Installing Rails :
 
-    gem install rails -v 4.2.2
+    gem install rails -v 4.2.6
 
 Bundler :
 	bundle install
