@@ -14,7 +14,9 @@ Installing Rails :
 
 Bundler :
 	bundle install
+
 	rake db:create
+
 	rake db:migrate
 
 Run:
